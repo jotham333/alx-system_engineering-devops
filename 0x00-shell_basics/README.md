@@ -1,2 +1,2 @@
-this directory contains
-an executable file
+ #Script writing
+ A script project to code an executable file
