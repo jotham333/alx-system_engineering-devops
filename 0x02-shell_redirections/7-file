@@ -1,0 +1,3 @@
+#!/bin/bash
+school=\*\\'"Best School"\'\\*$\?\*\*\*\*\*\:)
+echo "Best School">$school
