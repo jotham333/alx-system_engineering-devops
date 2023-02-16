@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type d -empty -print0 -o -type f -empty -print0 | xargs -0 ls -1a
+find . -type d,f -empty -printf '%y %p\n' | ls -1a
