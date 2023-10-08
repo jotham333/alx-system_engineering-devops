@@ -1,35 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# installs nginx and configures it on a remote server
 
-# Update the package repository
-sudo apt update
-
-# Install Nginx
-sudo apt install -y nginx
-
-# Ensure Nginx is running
-sudo service nginx start
-
-# Create a default Nginx configuration
-echo "server {
-    listen 80;
-    server_name _;
-    location / {
-        echo 'Hello World!';
-    }
-}" | sudo tee /etc/nginx/sites-available/default
-
-# Test Nginx configuration for syntax errors
-sudo nginx -t
-
-# Reload Nginx to apply the new configuration
-sudo nginx -s reload
-
-# Disable default systemd service to prevent conflicts
-sudo systemctl disable nginx
-
-# Restart Nginx without using systemctl
-sudo service nginx restart
-
-# Exit with a success message
-echo "Nginx has been installed and configured to meet the requirements."
-
+apt-get -y update
+apt-get -y install nginx
+ufw allow 'Nginx HTTP'
+echo 'Hello World!' > /var/www/html/index.nginx-debian.html
+service nginx start
