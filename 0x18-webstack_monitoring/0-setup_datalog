@@ -1,6 +1,2 @@
-# automated puppet fix (to find out why Apache is returning a 500 error)
-
-exec { 'Fix wordpress site':
-  command  => 'sudo sed -i "s/.phpp/.php/" /var/www/html/wp-settings.php',
-  provider => shell,
-}
+1ceaf0c1f0ee88cf1bee1856da907a0c
+b230425118512569ad13f279797d83ec6573622b
